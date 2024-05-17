@@ -98,6 +98,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Class\Conexion.cs" />
     <Compile Include="Class\Usuario.cs" />
     <Compile Include="Inicio.cs">
       <SubType>Form</SubType>
