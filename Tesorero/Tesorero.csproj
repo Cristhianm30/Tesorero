@@ -110,15 +110,15 @@
     <Compile Include="Class\Proveedor.cs" />
     <Compile Include="Class\Usuario.cs" />
     <Compile Include="Class\Venta.cs" />
-    <Compile Include="Inicio.cs">
+    <Compile Include="Frm\Inicio.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Inicio.Designer.cs">
+    <Compile Include="Frm\Inicio.Designer.cs">
       <DependentUpon>Inicio.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Inicio.resx">
+    <EmbeddedResource Include="Frm\Inicio.resx">
       <DependentUpon>Inicio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -145,7 +145,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Forms\" />
     <Folder Include="Media\Img\" />
   </ItemGroup>
   <ItemGroup>
