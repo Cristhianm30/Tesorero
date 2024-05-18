@@ -16,7 +16,7 @@ namespace Tesorero
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run( new Frm.Inicio() );
+            Application.Run(new Frm.Inicio());
         }
     }
 }
