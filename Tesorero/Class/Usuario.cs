@@ -8,5 +8,9 @@ namespace Tesorero.Class
 {
     internal class Usuario
     {
+        public int ID_Usuario {  get; set; }
+        public string Nombre_Usuario { get; set; }
+        public string Contrasena { get; set; }
+        public string Rol { get; set; }
     }
 }

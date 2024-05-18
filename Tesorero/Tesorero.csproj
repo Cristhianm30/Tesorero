@@ -98,8 +98,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Class\Cliente.cs" />
     <Compile Include="Class\Conexion.cs" />
+    <Compile Include="Class\Detalle_Pedido.cs" />
+    <Compile Include="Class\Empleado.cs" />
+    <Compile Include="Class\Factura.cs" />
+    <Compile Include="Class\Informe_Financiero.cs" />
+    <Compile Include="Class\Inventario.cs" />
+    <Compile Include="Class\Pedido.cs" />
+    <Compile Include="Class\Producto.cs" />
+    <Compile Include="Class\Proveedor.cs" />
     <Compile Include="Class\Usuario.cs" />
+    <Compile Include="Class\Venta.cs" />
     <Compile Include="Inicio.cs">
       <SubType>Form</SubType>
     </Compile>

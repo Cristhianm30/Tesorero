@@ -18,6 +18,7 @@ namespace Tesorero.Class
         private static Conexion con = null;
 
         private Conexion() {
+            //Datos de la conexion con la DB
             this.Base = "Local_Link";
             this.Servidor = "localhost";
             this.Puerto = "3306";
