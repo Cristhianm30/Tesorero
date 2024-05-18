@@ -10,21 +10,11 @@ using System.Windows.Forms;
 
 namespace Tesorero.Frm
 {
-    public partial class Inicio : Form
+    public partial class Registro : Form
     {
-        public Inicio()
+        public Registro()
         {
             InitializeComponent();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

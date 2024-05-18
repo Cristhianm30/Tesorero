@@ -1,6 +1,6 @@
-﻿namespace Tesorero
+﻿namespace Tesorero.Frm
 {
-    partial class inicio
+    partial class Inicio
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(inicio));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Inicio));
             this.Btn_Inicio = new System.Windows.Forms.Button();
             this.Btn_Registrar = new System.Windows.Forms.Button();
             this.textBox_Usuario = new System.Windows.Forms.TextBox();

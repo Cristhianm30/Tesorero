@@ -116,6 +116,12 @@
     <Compile Include="Frm\Inicio.Designer.cs">
       <DependentUpon>Inicio.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm\Registro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm\Registro.Designer.cs">
+      <DependentUpon>Registro.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Frm\Inicio.resx">
@@ -144,15 +150,16 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Media\Img\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Media\Ico\logo_icon.ico" />
-    <Content Include="Media\Ico\vendedor.ico" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Media\Ico\Icono_Mostrador.ico" />
+    <Content Include="Media\Ico\Icono_Tesoro.ico" />
+    <Content Include="Media\Img\Logo.png" />
+    <Content Include="Media\Img\Logotipo.png" />
+    <Content Include="Media\Img\Logo_Logotio.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
