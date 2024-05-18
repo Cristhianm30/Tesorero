@@ -8,8 +8,9 @@ namespace Tesorero.Class
 {
     internal class Inventario
     {
-        public int ID_Producto {  get; set; }
-        public int Cantidad_Stock { get; set; }
+        public int ID_Inventario {  get; set; }
+        public int ID_Producto_Almacen { get; set; }
+        public decimal Cantidad_Stock { get; set; }
         public string Fecha_Ultima_Actualizacion { get; set; }
 
     }

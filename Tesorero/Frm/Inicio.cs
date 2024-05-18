@@ -18,6 +18,18 @@ namespace Tesorero.Frm
             InitializeComponent();
         }
 
+        #region "Metodos propios"
+
+        //Cerrar seccion 
+        private void cerrar(object sender, FormClosedEventArgs e)
+        {
+            this.textBox_Usuario.Text = "";
+            this.textBox_Contrasena.Text = "";
+            this.textBox_Usuario.Select();
+        }
+
+        #endregion
+
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -34,12 +46,18 @@ namespace Tesorero.Frm
             D_Usuarios Datos = new D_Usuarios();
             TablaLogin = Datos.login(textBox_Usuario.Text, textBox_Contrasena.Text);
             if (TablaLogin.Rows.Count>0){
-                MessageBox.Show("Inicio Exitoso");
+                
+                //Crea el form menu y muestra menu, luego de adiciona el metodo cerrar y esconde el form inicio
+                Menu Frm_menu = new Menu(); 
+                Frm_menu.Show();
+                Frm_menu.FormClosed += cerrar;
+                this.Hide();
+
 
             }
             else
             {
-                MessageBox.Show("Acceso Denegado.");
+                MessageBox.Show("Usuario y/o Password no son valido... Porfavor verifique","Aviso del Sistema.",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
             }
         }
     }

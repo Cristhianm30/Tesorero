@@ -108,6 +108,7 @@
     <Compile Include="Class\Inventario.cs" />
     <Compile Include="Class\Pedido.cs" />
     <Compile Include="Class\Producto.cs" />
+    <Compile Include="Class\Producto_Almacen.cs" />
     <Compile Include="Class\Proveedor.cs" />
     <Compile Include="Class\Rol.cs" />
     <Compile Include="Class\Usuario.cs" />
@@ -117,6 +118,12 @@
     </Compile>
     <Compile Include="Frm\Inicio.Designer.cs">
       <DependentUpon>Inicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm\Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm\Menu.Designer.cs">
+      <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm\Registro.cs">
       <SubType>Form</SubType>
@@ -128,6 +135,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Frm\Inicio.resx">
       <DependentUpon>Inicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm\Menu.resx">
+      <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
