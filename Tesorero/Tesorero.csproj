@@ -101,6 +101,7 @@
     <Compile Include="Class\Cliente.cs" />
     <Compile Include="Class\Conexion.cs" />
     <Compile Include="Class\Detalle_Pedido.cs" />
+    <Compile Include="Class\D_Usuarios.cs" />
     <Compile Include="Class\Empleado.cs" />
     <Compile Include="Class\Factura.cs" />
     <Compile Include="Class\Informe_Financiero.cs" />

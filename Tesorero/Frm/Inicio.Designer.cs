@@ -42,23 +42,25 @@
             // 
             // Btn_Inicio
             // 
-            this.Btn_Inicio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(176)))), ((int)(((byte)(108)))));
+            this.Btn_Inicio.BackColor = System.Drawing.Color.Ivory;
             this.Btn_Inicio.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Btn_Inicio.Font = new System.Drawing.Font("Constantia", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_Inicio.Location = new System.Drawing.Point(475, 337);
+            this.Btn_Inicio.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.Btn_Inicio.Font = new System.Drawing.Font("Constantia", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_Inicio.Location = new System.Drawing.Point(467, 312);
             this.Btn_Inicio.Name = "Btn_Inicio";
             this.Btn_Inicio.Size = new System.Drawing.Size(185, 46);
             this.Btn_Inicio.TabIndex = 0;
             this.Btn_Inicio.Text = "Inicio";
             this.Btn_Inicio.UseVisualStyleBackColor = false;
+            this.Btn_Inicio.Click += new System.EventHandler(this.Btn_Inicio_Click);
             // 
             // Btn_Registrar
             // 
-            this.Btn_Registrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(176)))), ((int)(((byte)(108)))));
+            this.Btn_Registrar.BackColor = System.Drawing.Color.Ivory;
             this.Btn_Registrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Btn_Registrar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.Btn_Registrar.Font = new System.Drawing.Font("Constantia", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_Registrar.Location = new System.Drawing.Point(72, 337);
+            this.Btn_Registrar.Font = new System.Drawing.Font("Constantia", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_Registrar.Location = new System.Drawing.Point(70, 312);
             this.Btn_Registrar.Name = "Btn_Registrar";
             this.Btn_Registrar.Size = new System.Drawing.Size(185, 46);
             this.Btn_Registrar.TabIndex = 1;
@@ -67,9 +69,9 @@
             // 
             // textBox_Usuario
             // 
-            this.textBox_Usuario.BackColor = System.Drawing.SystemColors.Info;
+            this.textBox_Usuario.BackColor = System.Drawing.Color.WhiteSmoke;
             this.textBox_Usuario.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_Usuario.Location = new System.Drawing.Point(428, 118);
+            this.textBox_Usuario.Location = new System.Drawing.Point(416, 80);
             this.textBox_Usuario.MaxLength = 255;
             this.textBox_Usuario.Name = "textBox_Usuario";
             this.textBox_Usuario.Size = new System.Drawing.Size(300, 27);
@@ -79,7 +81,7 @@
             // 
             this.Lbl_Usuario.AutoSize = true;
             this.Lbl_Usuario.Font = new System.Drawing.Font("Constantia", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_Usuario.Location = new System.Drawing.Point(425, 90);
+            this.Lbl_Usuario.Location = new System.Drawing.Point(413, 52);
             this.Lbl_Usuario.Name = "Lbl_Usuario";
             this.Lbl_Usuario.Size = new System.Drawing.Size(84, 26);
             this.Lbl_Usuario.TabIndex = 3;
@@ -89,7 +91,7 @@
             // 
             this.Lbl_Contrasena.AutoSize = true;
             this.Lbl_Contrasena.Font = new System.Drawing.Font("Constantia", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_Contrasena.Location = new System.Drawing.Point(425, 219);
+            this.Lbl_Contrasena.Location = new System.Drawing.Point(413, 181);
             this.Lbl_Contrasena.Name = "Lbl_Contrasena";
             this.Lbl_Contrasena.Size = new System.Drawing.Size(115, 26);
             this.Lbl_Contrasena.TabIndex = 5;
@@ -98,9 +100,9 @@
             // 
             // textBox_Contrasena
             // 
-            this.textBox_Contrasena.BackColor = System.Drawing.SystemColors.Info;
+            this.textBox_Contrasena.BackColor = System.Drawing.Color.WhiteSmoke;
             this.textBox_Contrasena.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_Contrasena.Location = new System.Drawing.Point(428, 247);
+            this.textBox_Contrasena.Location = new System.Drawing.Point(416, 209);
             this.textBox_Contrasena.MaxLength = 255;
             this.textBox_Contrasena.Name = "textBox_Contrasena";
             this.textBox_Contrasena.PasswordChar = '*';
@@ -112,7 +114,7 @@
             // 
             this.pictureBox_Logo_Logotipo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(221)))), ((int)(((byte)(112)))));
             this.pictureBox_Logo_Logotipo.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox_Logo_Logotipo.Image")));
-            this.pictureBox_Logo_Logotipo.Location = new System.Drawing.Point(42, 76);
+            this.pictureBox_Logo_Logotipo.Location = new System.Drawing.Point(41, 40);
             this.pictureBox_Logo_Logotipo.Name = "pictureBox_Logo_Logotipo";
             this.pictureBox_Logo_Logotipo.Size = new System.Drawing.Size(241, 234);
             this.pictureBox_Logo_Logotipo.TabIndex = 6;
@@ -123,7 +125,7 @@
             this.splitter1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(221)))), ((int)(((byte)(112)))));
             this.splitter1.Location = new System.Drawing.Point(0, 0);
             this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(332, 561);
+            this.splitter1.Size = new System.Drawing.Size(343, 388);
             this.splitter1.TabIndex = 7;
             this.splitter1.TabStop = false;
             // 
@@ -132,7 +134,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(191)))), ((int)(((byte)(127)))));
-            this.ClientSize = new System.Drawing.Size(884, 561);
+            this.ClientSize = new System.Drawing.Size(767, 388);
             this.Controls.Add(this.pictureBox_Logo_Logotipo);
             this.Controls.Add(this.Lbl_Contrasena);
             this.Controls.Add(this.textBox_Contrasena);
