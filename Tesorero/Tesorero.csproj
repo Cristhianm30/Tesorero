@@ -108,6 +108,7 @@
     <Compile Include="Class\Pedido.cs" />
     <Compile Include="Class\Producto.cs" />
     <Compile Include="Class\Proveedor.cs" />
+    <Compile Include="Class\Rol.cs" />
     <Compile Include="Class\Usuario.cs" />
     <Compile Include="Class\Venta.cs" />
     <Compile Include="Frm\Inicio.cs">

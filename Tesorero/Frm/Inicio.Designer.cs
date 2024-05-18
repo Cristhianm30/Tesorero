@@ -43,6 +43,7 @@
             // Btn_Inicio
             // 
             this.Btn_Inicio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(176)))), ((int)(((byte)(108)))));
+            this.Btn_Inicio.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Btn_Inicio.Font = new System.Drawing.Font("Constantia", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_Inicio.Location = new System.Drawing.Point(475, 337);
             this.Btn_Inicio.Name = "Btn_Inicio";
@@ -54,7 +55,7 @@
             // Btn_Registrar
             // 
             this.Btn_Registrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(176)))), ((int)(((byte)(108)))));
-            this.Btn_Registrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.Btn_Registrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Btn_Registrar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.Btn_Registrar.Font = new System.Drawing.Font("Constantia", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_Registrar.Location = new System.Drawing.Point(72, 337);
@@ -126,7 +127,7 @@
             this.splitter1.TabIndex = 7;
             this.splitter1.TabStop = false;
             // 
-            // inicio
+            // Inicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -145,7 +146,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "inicio";
+            this.Name = "Inicio";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tesorero";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Logo_Logotipo)).EndInit();

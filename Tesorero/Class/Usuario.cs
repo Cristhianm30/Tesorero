@@ -11,6 +11,6 @@ namespace Tesorero.Class
         public int ID_Usuario {  get; set; }
         public string Nombre_Usuario { get; set; }
         public string Contrasena { get; set; }
-        public string Rol { get; set; }
+        public int ID_Rol { get; set; }
     }
 }
