@@ -125,11 +125,11 @@
     <Compile Include="Frm\Menu.Designer.cs">
       <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Frm\Registro.cs">
+    <Compile Include="Frm\Usuarios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Frm\Registro.Designer.cs">
-      <DependentUpon>Registro.cs</DependentUpon>
+    <Compile Include="Frm\Usuarios.Designer.cs">
+      <DependentUpon>Usuarios.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -138,6 +138,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frm\Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm\Usuarios.resx">
+      <DependentUpon>Usuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -169,9 +172,18 @@
   <ItemGroup>
     <Content Include="Media\Ico\Icono_Mostrador.ico" />
     <Content Include="Media\Ico\Icono_Tesoro.ico" />
+    <Content Include="Media\Img\Clientes.png" />
+    <Content Include="Media\Img\Facturacion.png" />
+    <Content Include="Media\Img\Informes.png" />
+    <Content Include="Media\Img\Inventario.png" />
     <Content Include="Media\Img\Logo.png" />
     <Content Include="Media\Img\Logotipo.png" />
     <Content Include="Media\Img\Logo_Logotio.png" />
+    <Content Include="Media\Img\Ordenar.png" />
+    <Content Include="Media\Img\Preguntas.png" />
+    <Content Include="Media\Img\Productos.png" />
+    <Content Include="Media\Img\Proveedores.png" />
+    <Content Include="Media\Img\Registro.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
