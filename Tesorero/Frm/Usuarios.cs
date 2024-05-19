@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Tesorero.Class;
 
 namespace Tesorero.Frm
 {
@@ -37,6 +38,7 @@ namespace Tesorero.Frm
             Txt_Buscar.Enabled = lEstado;
             Txt_Contrasena.Enabled = lEstado;
             Txt_Nombre_Usuario.Enabled = lEstado;
+            Cbox_Rol.Enabled = lEstado;
         }
 
         private void Estado_Botones_Procesos(bool lEstado)
@@ -51,6 +53,41 @@ namespace Tesorero.Frm
             Btn_Actualizar.Enabled = lEstado;
             Btn_Eliminar.Enabled = lEstado;
             Btn_Regresar.Enabled = lEstado;
+        }
+
+        private void Formato()
+        {
+            Dgv_Listado.Columns[0].Width = 50;
+            Dgv_Listado.Columns[0].HeaderText = "ID";
+            Dgv_Listado.Columns[1].Width = 230;
+            Dgv_Listado.Columns[1].HeaderText = "Usuario";
+            Dgv_Listado.Columns[2].Width = 225;
+            Dgv_Listado.Columns[2].HeaderText = "Rol";
+            Dgv_Listado.Columns[3].Visible = false;
+
+
+        }
+
+        private void Listado_usuario(string cTexto)
+        {
+            D_Usuarios Datos = new D_Usuarios();
+            Dgv_Listado.DataSource = Datos.Listado_Usuario(cTexto);
+            this.Formato();
+        }
+
+        private void Listado_Rol()
+        {
+            try
+            {
+                D_Usuarios Datos = new D_Usuarios();
+                Cbox_Rol.DataSource= Datos.Listado_Rol();
+                Cbox_Rol.ValueMember = "ID_Rol";
+                Cbox_Rol.DisplayMember = "Descripcion";
+
+            }catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
         }
         #endregion
 
@@ -82,6 +119,17 @@ namespace Tesorero.Frm
             this.Estado_texto(false);
             this.Estado_Botones_Procesos(false);
             this.Estado_Botones_Principales(true);
+        }
+
+        private void Usuarios_Load(object sender, EventArgs e)
+        {
+            this.Listado_Rol();
+            this.Listado_usuario("%");
+        }
+
+        private void Btn_Buscar_Click(object sender, EventArgs e)
+        {
+            this.Listado_usuario(Txt_Buscar.Text);
         }
     }
 }

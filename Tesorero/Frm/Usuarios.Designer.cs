@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Usuarios));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Panel_Right = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.Btn_Regresar = new System.Windows.Forms.Button();
@@ -52,7 +53,7 @@
             this.Btn_Guardar = new System.Windows.Forms.Button();
             this.Txt_Buscar = new System.Windows.Forms.TextBox();
             this.Lbl_Buscar = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Dgv_Listado = new System.Windows.Forms.DataGridView();
             this.Btn_Buscar = new System.Windows.Forms.Button();
             this.Panel_Right.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -60,7 +61,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.Panel_Center.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Img_Logotipo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Dgv_Listado)).BeginInit();
             this.SuspendLayout();
             // 
             // Panel_Right
@@ -177,7 +178,7 @@
             // 
             this.Panel_Center.BackColor = System.Drawing.Color.Beige;
             this.Panel_Center.Controls.Add(this.Btn_Buscar);
-            this.Panel_Center.Controls.Add(this.dataGridView1);
+            this.Panel_Center.Controls.Add(this.Dgv_Listado);
             this.Panel_Center.Controls.Add(this.Txt_Buscar);
             this.Panel_Center.Controls.Add(this.Lbl_Buscar);
             this.Panel_Center.Controls.Add(this.Btn_Guardar);
@@ -283,6 +284,7 @@
             // 
             // Cbox_Rol
             // 
+            this.Cbox_Rol.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Cbox_Rol.Enabled = false;
             this.Cbox_Rol.Font = new System.Drawing.Font("Constantia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Cbox_Rol.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(44)))), ((int)(((byte)(37)))));
@@ -348,17 +350,29 @@
             this.Lbl_Buscar.TabIndex = 7;
             this.Lbl_Buscar.Text = "     Buscar";
             // 
-            // dataGridView1
+            // Dgv_Listado
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToOrderColumns = true;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(36, 321);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(827, 210);
-            this.dataGridView1.TabIndex = 9;
+            this.Dgv_Listado.AllowUserToAddRows = false;
+            this.Dgv_Listado.AllowUserToDeleteRows = false;
+            this.Dgv_Listado.AllowUserToOrderColumns = true;
+            this.Dgv_Listado.BackgroundColor = System.Drawing.Color.Bisque;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Beige;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(69)))), ((int)(((byte)(62)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Dgv_Listado.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.Dgv_Listado.ColumnHeadersHeight = 30;
+            this.Dgv_Listado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.Dgv_Listado.Location = new System.Drawing.Point(36, 321);
+            this.Dgv_Listado.Name = "Dgv_Listado";
+            this.Dgv_Listado.ReadOnly = true;
+            this.Dgv_Listado.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Dgv_Listado.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.Dgv_Listado.Size = new System.Drawing.Size(538, 210);
+            this.Dgv_Listado.TabIndex = 9;
             // 
             // Btn_Buscar
             // 
@@ -373,6 +387,7 @@
             this.Btn_Buscar.TabIndex = 10;
             this.Btn_Buscar.Text = "Buscar";
             this.Btn_Buscar.UseVisualStyleBackColor = false;
+            this.Btn_Buscar.Click += new System.EventHandler(this.Btn_Buscar_Click);
             // 
             // Usuarios
             // 
@@ -389,6 +404,7 @@
             this.Name = "Usuarios";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Usuarios";
+            this.Load += new System.EventHandler(this.Usuarios_Load);
             this.Panel_Right.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.Panel_Header.ResumeLayout(false);
@@ -397,7 +413,7 @@
             this.Panel_Center.ResumeLayout(false);
             this.Panel_Center.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Img_Logotipo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Dgv_Listado)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -424,7 +440,7 @@
         private System.Windows.Forms.ComboBox Cbox_Rol;
         private System.Windows.Forms.Button Btn_Guardar;
         private System.Windows.Forms.Button Btn_Cancelar;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView Dgv_Listado;
         private System.Windows.Forms.TextBox Txt_Buscar;
         private System.Windows.Forms.Label Lbl_Buscar;
         private System.Windows.Forms.Button Btn_Buscar;

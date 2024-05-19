@@ -39,5 +39,62 @@ namespace Tesorero.Class
             }
         }
 
+        public DataTable Listado_Usuario(string cTexto)
+        {
+            MySqlDataReader Resultado;
+            DataTable Tabla = new DataTable();
+            MySqlConnection sqlcon = new MySqlConnection();
+            try
+            {
+                //Procedimiento de almacenado
+                sqlcon = Conexion.getInstancia().CrearConexion();
+                MySqlCommand Comando = new MySqlCommand("usp_Listado_Usuario", sqlcon);
+                Comando.CommandType = CommandType.StoredProcedure;
+                //Parametros
+                Comando.Parameters.Add("cTexto", MySqlDbType.VarChar).Value = cTexto;
+                // Carga de datos
+                sqlcon.Open();
+                Resultado = Comando.ExecuteReader();
+                Tabla.Load(Resultado);
+                return Tabla;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (sqlcon.State == ConnectionState.Open) sqlcon.Close();
+            }
+        }
+
+        public DataTable Listado_Rol()
+        {
+            MySqlDataReader Resultado;
+            DataTable Tabla = new DataTable();
+            MySqlConnection sqlcon = new MySqlConnection();
+            try
+            {
+                //Procedimiento de almacenado
+                sqlcon = Conexion.getInstancia().CrearConexion();
+                MySqlCommand Comando = new MySqlCommand("usp_Listado_Rol", sqlcon);
+                Comando.CommandType = CommandType.StoredProcedure;
+                //Parametros
+                // Carga de datos
+                sqlcon.Open();
+                Resultado = Comando.ExecuteReader();
+                Tabla.Load(Resultado);
+                return Tabla;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (sqlcon.State == ConnectionState.Open) sqlcon.Close();
+            }
+        }
+
     }
 }
