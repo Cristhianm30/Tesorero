@@ -39,6 +39,9 @@ namespace Tesorero.Frm
             Txt_Contrasena.Enabled = lEstado;
             Txt_Nombre_Usuario.Enabled = lEstado;
             Cbox_Rol.Enabled = lEstado;
+            Txt_Buscar.Enabled= lEstado;
+            Dgv_Listado.Enabled = lEstado;
+            Btn_Buscar.Enabled = lEstado;
         }
 
         private void Estado_Botones_Procesos(bool lEstado)
@@ -89,6 +92,20 @@ namespace Tesorero.Frm
                 MessageBox.Show(ex.Message + ex.StackTrace);
             }
         }
+
+        private void Selecciona_Item()
+        {
+            if (string.IsNullOrEmpty(Convert.ToString(Dgv_Listado.CurrentRow.Cells["ID_Rol"].Value)))
+            {
+                MessageBox.Show("Selecione un registro","Aviso del Sistema",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            }
+            else{
+                ID_Usuario = Convert.ToInt32(Dgv_Listado.CurrentRow.Cells["ID_Rol"].Value);
+                Txt_Nombre_Usuario.Text = Dgv_Listado.CurrentRow.Cells["Nombre_Usuario"].Value.ToString();
+                Txt_Contrasena.Text = "";
+                Cbox_Rol.Text = Dgv_Listado.CurrentRow.Cells["Descripcion"].Value.ToString();
+            }
+        }
         #endregion
 
         private void Btn_Regresar_Click(object sender, EventArgs e)
@@ -130,6 +147,90 @@ namespace Tesorero.Frm
         private void Btn_Buscar_Click(object sender, EventArgs e)
         {
             this.Listado_usuario(Txt_Buscar.Text);
+        }
+
+        private void Btn_Eliminar_Click(object sender, EventArgs e)
+        {
+            if (ID_Usuario == 0)
+            {
+                MessageBox.Show("Seleccione un registro para eliminar", "Aviso del Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else
+            {
+                var resultado = MessageBox.Show("¿Está seguro de eliminar este registro?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (resultado == DialogResult.Yes)
+                {
+                    try
+                    {
+                        D_Usuarios Datos = new D_Usuarios();
+                        string Respuesta = Datos.Guardar_Usuario(3, new Usuario { ID_Usuario = ID_Usuario });
+                        if (int.TryParse(Respuesta, out int codigo))
+                        {
+                            MessageBox.Show("Registro eliminado correctamente", "Aviso del Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            this.Listado_usuario("%");
+                            this.Limpiar_Texto();
+                            this.Estado_texto(false);
+                            this.Estado_Botones_Procesos(false);
+                            this.Estado_Botones_Principales(true);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Error al eliminar el registro: " + Respuesta, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error al eliminar el registro: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+        }
+
+
+        private void Btn_Actualizar_Click(object sender, EventArgs e)
+        {
+            Estado_Guardar = 2; 
+            this.Estado_texto(true);
+            Txt_Nombre_Usuario.Enabled = false;
+            this.Estado_Botones_Procesos(true);
+            this.Estado_Botones_Principales(false);
+            this.Txt_Contrasena.Focus();
+        }
+
+        private void Btn_Guardar_Click(object sender, EventArgs e)
+        {
+            if (Txt_Nombre_Usuario.Text == string.Empty || Txt_Contrasena.Text == string.Empty || Cbox_Rol.Text == string.Empty)
+            {
+                MessageBox.Show("Ingrese los datos requeridos", "Aviso del Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else
+            {
+                string Respuesta;
+                Usuario Pro = new Usuario();
+                Pro.ID_Usuario = ID_Usuario;
+                Pro.Nombre_Usuario = Txt_Nombre_Usuario.Text;
+                Pro.Contrasena = Txt_Contrasena.Text;
+                Pro.ID_Rol = Convert.ToInt32(Cbox_Rol.SelectedValue);
+                D_Usuarios Datos = new D_Usuarios();
+                Respuesta = Datos.Guardar_Usuario(Estado_Guardar, Pro);
+                bool esNumero = int.TryParse(Respuesta, out int xCodigo);
+                if (esNumero==true) 
+                {
+                    Estado_Guardar = 0;
+                    ID_Usuario = 0;
+                    this.Limpiar_Texto();
+                    this.Estado_texto(false);
+                    this.Estado_Botones_Procesos(false);
+                    this.Estado_Botones_Principales(true);
+                    this.Listado_usuario("%");
+                    MessageBox.Show("Los datos se han guardado correctamente en el codigo #" + Respuesta.Trim(), "Aviso del Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+        }
+
+        private void Dgv_Listado_CellEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            this.Selecciona_Item();
         }
     }
 }

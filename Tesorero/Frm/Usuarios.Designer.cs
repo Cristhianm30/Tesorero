@@ -30,9 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Usuarios));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Panel_Right = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.Img_Logotipo = new System.Windows.Forms.PictureBox();
             this.Btn_Regresar = new System.Windows.Forms.Button();
             this.Btn_Actualizar = new System.Windows.Forms.Button();
             this.Btn_Eliminar = new System.Windows.Forms.Button();
@@ -41,26 +42,25 @@
             this.Lbl_Usuario = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Panel_Center = new System.Windows.Forms.Panel();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.Img_Logotipo = new System.Windows.Forms.PictureBox();
-            this.Lbl_Nombre_Usuario = new System.Windows.Forms.Label();
-            this.Txt_Nombre_Usuario = new System.Windows.Forms.TextBox();
-            this.Txt_Contrasena = new System.Windows.Forms.TextBox();
-            this.Lbl_Contrasena = new System.Windows.Forms.Label();
-            this.Lbl_Rol = new System.Windows.Forms.Label();
-            this.Cbox_Rol = new System.Windows.Forms.ComboBox();
-            this.Btn_Cancelar = new System.Windows.Forms.Button();
-            this.Btn_Guardar = new System.Windows.Forms.Button();
+            this.Btn_Buscar = new System.Windows.Forms.Button();
+            this.Dgv_Listado = new System.Windows.Forms.DataGridView();
             this.Txt_Buscar = new System.Windows.Forms.TextBox();
             this.Lbl_Buscar = new System.Windows.Forms.Label();
-            this.Dgv_Listado = new System.Windows.Forms.DataGridView();
-            this.Btn_Buscar = new System.Windows.Forms.Button();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.Btn_Guardar = new System.Windows.Forms.Button();
+            this.Btn_Cancelar = new System.Windows.Forms.Button();
+            this.Cbox_Rol = new System.Windows.Forms.ComboBox();
+            this.Lbl_Rol = new System.Windows.Forms.Label();
+            this.Txt_Contrasena = new System.Windows.Forms.TextBox();
+            this.Lbl_Contrasena = new System.Windows.Forms.Label();
+            this.Txt_Nombre_Usuario = new System.Windows.Forms.TextBox();
+            this.Lbl_Nombre_Usuario = new System.Windows.Forms.Label();
             this.Panel_Right.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Img_Logotipo)).BeginInit();
             this.Panel_Header.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.Panel_Center.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Img_Logotipo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_Listado)).BeginInit();
             this.SuspendLayout();
             // 
@@ -86,6 +86,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(181, 73);
             this.panel1.TabIndex = 4;
+            // 
+            // Img_Logotipo
+            // 
+            this.Img_Logotipo.Image = ((System.Drawing.Image)(resources.GetObject("Img_Logotipo.Image")));
+            this.Img_Logotipo.Location = new System.Drawing.Point(0, 0);
+            this.Img_Logotipo.Name = "Img_Logotipo";
+            this.Img_Logotipo.Size = new System.Drawing.Size(182, 73);
+            this.Img_Logotipo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Img_Logotipo.TabIndex = 0;
+            this.Img_Logotipo.TabStop = false;
             // 
             // Btn_Regresar
             // 
@@ -113,6 +123,7 @@
             this.Btn_Actualizar.TabIndex = 2;
             this.Btn_Actualizar.Text = "Actualizar";
             this.Btn_Actualizar.UseVisualStyleBackColor = false;
+            this.Btn_Actualizar.Click += new System.EventHandler(this.Btn_Actualizar_Click);
             // 
             // Btn_Eliminar
             // 
@@ -126,6 +137,7 @@
             this.Btn_Eliminar.TabIndex = 1;
             this.Btn_Eliminar.Text = "Eliminar";
             this.Btn_Eliminar.UseVisualStyleBackColor = false;
+            this.Btn_Eliminar.Click += new System.EventHandler(this.Btn_Eliminar_Click);
             // 
             // Btn_Registrar
             // 
@@ -195,6 +207,71 @@
             this.Panel_Center.Size = new System.Drawing.Size(902, 539);
             this.Panel_Center.TabIndex = 2;
             // 
+            // Btn_Buscar
+            // 
+            this.Btn_Buscar.BackColor = System.Drawing.Color.ForestGreen;
+            this.Btn_Buscar.FlatAppearance.BorderColor = System.Drawing.Color.MintCream;
+            this.Btn_Buscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_Buscar.Font = new System.Drawing.Font("Constantia", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_Buscar.ForeColor = System.Drawing.Color.White;
+            this.Btn_Buscar.Location = new System.Drawing.Point(410, 277);
+            this.Btn_Buscar.Name = "Btn_Buscar";
+            this.Btn_Buscar.Size = new System.Drawing.Size(89, 31);
+            this.Btn_Buscar.TabIndex = 10;
+            this.Btn_Buscar.Text = "Buscar";
+            this.Btn_Buscar.UseVisualStyleBackColor = false;
+            this.Btn_Buscar.Click += new System.EventHandler(this.Btn_Buscar_Click);
+            // 
+            // Dgv_Listado
+            // 
+            this.Dgv_Listado.AllowUserToAddRows = false;
+            this.Dgv_Listado.AllowUserToDeleteRows = false;
+            this.Dgv_Listado.AllowUserToOrderColumns = true;
+            this.Dgv_Listado.BackgroundColor = System.Drawing.Color.Bisque;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Beige;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(69)))), ((int)(((byte)(62)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Dgv_Listado.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.Dgv_Listado.ColumnHeadersHeight = 30;
+            this.Dgv_Listado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.Dgv_Listado.Location = new System.Drawing.Point(36, 321);
+            this.Dgv_Listado.Name = "Dgv_Listado";
+            this.Dgv_Listado.ReadOnly = true;
+            this.Dgv_Listado.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Dgv_Listado.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.Dgv_Listado.Size = new System.Drawing.Size(538, 210);
+            this.Dgv_Listado.TabIndex = 9;
+            this.Dgv_Listado.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_Listado_CellEnter);
+            // 
+            // Txt_Buscar
+            // 
+            this.Txt_Buscar.Font = new System.Drawing.Font("Constantia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Txt_Buscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(44)))), ((int)(((byte)(37)))));
+            this.Txt_Buscar.Location = new System.Drawing.Point(36, 277);
+            this.Txt_Buscar.MaxLength = 25;
+            this.Txt_Buscar.Name = "Txt_Buscar";
+            this.Txt_Buscar.Size = new System.Drawing.Size(368, 31);
+            this.Txt_Buscar.TabIndex = 8;
+            this.Txt_Buscar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // Lbl_Buscar
+            // 
+            this.Lbl_Buscar.AutoSize = true;
+            this.Lbl_Buscar.Font = new System.Drawing.Font("Constantia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_Buscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(44)))), ((int)(((byte)(37)))));
+            this.Lbl_Buscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Lbl_Buscar.ImageKey = "catalejo.png";
+            this.Lbl_Buscar.ImageList = this.imageList1;
+            this.Lbl_Buscar.Location = new System.Drawing.Point(32, 251);
+            this.Lbl_Buscar.Name = "Lbl_Buscar";
+            this.Lbl_Buscar.Size = new System.Drawing.Size(90, 23);
+            this.Lbl_Buscar.TabIndex = 7;
+            this.Lbl_Buscar.Text = "     Buscar";
+            // 
             // imageList1
             // 
             this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
@@ -205,41 +282,63 @@
             this.imageList1.Images.SetKeyName(3, "pirata.png");
             this.imageList1.Images.SetKeyName(4, "catalejo.png");
             // 
-            // Img_Logotipo
+            // Btn_Guardar
             // 
-            this.Img_Logotipo.Image = ((System.Drawing.Image)(resources.GetObject("Img_Logotipo.Image")));
-            this.Img_Logotipo.Location = new System.Drawing.Point(0, 0);
-            this.Img_Logotipo.Name = "Img_Logotipo";
-            this.Img_Logotipo.Size = new System.Drawing.Size(182, 73);
-            this.Img_Logotipo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Img_Logotipo.TabIndex = 0;
-            this.Img_Logotipo.TabStop = false;
+            this.Btn_Guardar.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.Btn_Guardar.FlatAppearance.BorderColor = System.Drawing.Color.MintCream;
+            this.Btn_Guardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_Guardar.Font = new System.Drawing.Font("Constantia", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_Guardar.ForeColor = System.Drawing.Color.White;
+            this.Btn_Guardar.Location = new System.Drawing.Point(629, 135);
+            this.Btn_Guardar.Name = "Btn_Guardar";
+            this.Btn_Guardar.Size = new System.Drawing.Size(121, 44);
+            this.Btn_Guardar.TabIndex = 6;
+            this.Btn_Guardar.Text = "Guardar";
+            this.Btn_Guardar.UseVisualStyleBackColor = false;
+            this.Btn_Guardar.Visible = false;
+            this.Btn_Guardar.Click += new System.EventHandler(this.Btn_Guardar_Click);
             // 
-            // Lbl_Nombre_Usuario
+            // Btn_Cancelar
             // 
-            this.Lbl_Nombre_Usuario.AutoSize = true;
-            this.Lbl_Nombre_Usuario.Font = new System.Drawing.Font("Constantia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_Nombre_Usuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(44)))), ((int)(((byte)(37)))));
-            this.Lbl_Nombre_Usuario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Lbl_Nombre_Usuario.ImageKey = "pirata (1).png";
-            this.Lbl_Nombre_Usuario.ImageList = this.imageList1;
-            this.Lbl_Nombre_Usuario.Location = new System.Drawing.Point(32, 30);
-            this.Lbl_Nombre_Usuario.Name = "Lbl_Nombre_Usuario";
-            this.Lbl_Nombre_Usuario.Size = new System.Drawing.Size(196, 23);
-            this.Lbl_Nombre_Usuario.TabIndex = 0;
-            this.Lbl_Nombre_Usuario.Text = "     Nombre de Usuario";
+            this.Btn_Cancelar.BackColor = System.Drawing.Color.OrangeRed;
+            this.Btn_Cancelar.FlatAppearance.BorderColor = System.Drawing.Color.MintCream;
+            this.Btn_Cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_Cancelar.Font = new System.Drawing.Font("Constantia", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_Cancelar.ForeColor = System.Drawing.Color.White;
+            this.Btn_Cancelar.Location = new System.Drawing.Point(450, 135);
+            this.Btn_Cancelar.Name = "Btn_Cancelar";
+            this.Btn_Cancelar.Size = new System.Drawing.Size(121, 44);
+            this.Btn_Cancelar.TabIndex = 5;
+            this.Btn_Cancelar.Text = "Cancelar";
+            this.Btn_Cancelar.UseVisualStyleBackColor = false;
+            this.Btn_Cancelar.Visible = false;
+            this.Btn_Cancelar.Click += new System.EventHandler(this.Btn_Cancelar_Click);
             // 
-            // Txt_Nombre_Usuario
+            // Cbox_Rol
             // 
-            this.Txt_Nombre_Usuario.Enabled = false;
-            this.Txt_Nombre_Usuario.Font = new System.Drawing.Font("Constantia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Txt_Nombre_Usuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(44)))), ((int)(((byte)(37)))));
-            this.Txt_Nombre_Usuario.Location = new System.Drawing.Point(36, 56);
-            this.Txt_Nombre_Usuario.MaxLength = 25;
-            this.Txt_Nombre_Usuario.Name = "Txt_Nombre_Usuario";
-            this.Txt_Nombre_Usuario.Size = new System.Drawing.Size(300, 31);
-            this.Txt_Nombre_Usuario.TabIndex = 1;
-            this.Txt_Nombre_Usuario.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.Cbox_Rol.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.Cbox_Rol.Enabled = false;
+            this.Cbox_Rol.Font = new System.Drawing.Font("Constantia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Cbox_Rol.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(44)))), ((int)(((byte)(37)))));
+            this.Cbox_Rol.FormattingEnabled = true;
+            this.Cbox_Rol.Location = new System.Drawing.Point(36, 148);
+            this.Cbox_Rol.Name = "Cbox_Rol";
+            this.Cbox_Rol.Size = new System.Drawing.Size(300, 31);
+            this.Cbox_Rol.TabIndex = 5;
+            // 
+            // Lbl_Rol
+            // 
+            this.Lbl_Rol.AutoSize = true;
+            this.Lbl_Rol.Font = new System.Drawing.Font("Constantia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_Rol.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(44)))), ((int)(((byte)(37)))));
+            this.Lbl_Rol.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Lbl_Rol.ImageKey = "pirata 03.png";
+            this.Lbl_Rol.ImageList = this.imageList1;
+            this.Lbl_Rol.Location = new System.Drawing.Point(32, 122);
+            this.Lbl_Rol.Name = "Lbl_Rol";
+            this.Lbl_Rol.Size = new System.Drawing.Size(156, 23);
+            this.Lbl_Rol.TabIndex = 4;
+            this.Lbl_Rol.Text = "     Rol de Usuario";
             // 
             // Txt_Contrasena
             // 
@@ -268,126 +367,31 @@
             this.Lbl_Contrasena.TabIndex = 2;
             this.Lbl_Contrasena.Text = "     Contraseña";
             // 
-            // Lbl_Rol
+            // Txt_Nombre_Usuario
             // 
-            this.Lbl_Rol.AutoSize = true;
-            this.Lbl_Rol.Font = new System.Drawing.Font("Constantia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_Rol.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(44)))), ((int)(((byte)(37)))));
-            this.Lbl_Rol.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Lbl_Rol.ImageKey = "pirata 03.png";
-            this.Lbl_Rol.ImageList = this.imageList1;
-            this.Lbl_Rol.Location = new System.Drawing.Point(32, 122);
-            this.Lbl_Rol.Name = "Lbl_Rol";
-            this.Lbl_Rol.Size = new System.Drawing.Size(156, 23);
-            this.Lbl_Rol.TabIndex = 4;
-            this.Lbl_Rol.Text = "     Rol de Usuario";
+            this.Txt_Nombre_Usuario.Enabled = false;
+            this.Txt_Nombre_Usuario.Font = new System.Drawing.Font("Constantia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Txt_Nombre_Usuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(44)))), ((int)(((byte)(37)))));
+            this.Txt_Nombre_Usuario.Location = new System.Drawing.Point(36, 56);
+            this.Txt_Nombre_Usuario.MaxLength = 25;
+            this.Txt_Nombre_Usuario.Name = "Txt_Nombre_Usuario";
+            this.Txt_Nombre_Usuario.Size = new System.Drawing.Size(300, 31);
+            this.Txt_Nombre_Usuario.TabIndex = 1;
+            this.Txt_Nombre_Usuario.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // Cbox_Rol
+            // Lbl_Nombre_Usuario
             // 
-            this.Cbox_Rol.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.Cbox_Rol.Enabled = false;
-            this.Cbox_Rol.Font = new System.Drawing.Font("Constantia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Cbox_Rol.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(44)))), ((int)(((byte)(37)))));
-            this.Cbox_Rol.FormattingEnabled = true;
-            this.Cbox_Rol.Location = new System.Drawing.Point(36, 148);
-            this.Cbox_Rol.Name = "Cbox_Rol";
-            this.Cbox_Rol.Size = new System.Drawing.Size(300, 31);
-            this.Cbox_Rol.TabIndex = 5;
-            // 
-            // Btn_Cancelar
-            // 
-            this.Btn_Cancelar.BackColor = System.Drawing.Color.OrangeRed;
-            this.Btn_Cancelar.FlatAppearance.BorderColor = System.Drawing.Color.MintCream;
-            this.Btn_Cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_Cancelar.Font = new System.Drawing.Font("Constantia", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_Cancelar.ForeColor = System.Drawing.Color.White;
-            this.Btn_Cancelar.Location = new System.Drawing.Point(450, 135);
-            this.Btn_Cancelar.Name = "Btn_Cancelar";
-            this.Btn_Cancelar.Size = new System.Drawing.Size(121, 44);
-            this.Btn_Cancelar.TabIndex = 5;
-            this.Btn_Cancelar.Text = "Cancelar";
-            this.Btn_Cancelar.UseVisualStyleBackColor = false;
-            this.Btn_Cancelar.Visible = false;
-            this.Btn_Cancelar.Click += new System.EventHandler(this.Btn_Cancelar_Click);
-            // 
-            // Btn_Guardar
-            // 
-            this.Btn_Guardar.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.Btn_Guardar.FlatAppearance.BorderColor = System.Drawing.Color.MintCream;
-            this.Btn_Guardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_Guardar.Font = new System.Drawing.Font("Constantia", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_Guardar.ForeColor = System.Drawing.Color.White;
-            this.Btn_Guardar.Location = new System.Drawing.Point(629, 135);
-            this.Btn_Guardar.Name = "Btn_Guardar";
-            this.Btn_Guardar.Size = new System.Drawing.Size(121, 44);
-            this.Btn_Guardar.TabIndex = 6;
-            this.Btn_Guardar.Text = "Guardar";
-            this.Btn_Guardar.UseVisualStyleBackColor = false;
-            this.Btn_Guardar.Visible = false;
-            // 
-            // Txt_Buscar
-            // 
-            this.Txt_Buscar.Font = new System.Drawing.Font("Constantia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Txt_Buscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(44)))), ((int)(((byte)(37)))));
-            this.Txt_Buscar.Location = new System.Drawing.Point(36, 277);
-            this.Txt_Buscar.MaxLength = 25;
-            this.Txt_Buscar.Name = "Txt_Buscar";
-            this.Txt_Buscar.Size = new System.Drawing.Size(368, 31);
-            this.Txt_Buscar.TabIndex = 8;
-            this.Txt_Buscar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // Lbl_Buscar
-            // 
-            this.Lbl_Buscar.AutoSize = true;
-            this.Lbl_Buscar.Font = new System.Drawing.Font("Constantia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_Buscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(44)))), ((int)(((byte)(37)))));
-            this.Lbl_Buscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Lbl_Buscar.ImageKey = "catalejo.png";
-            this.Lbl_Buscar.ImageList = this.imageList1;
-            this.Lbl_Buscar.Location = new System.Drawing.Point(32, 251);
-            this.Lbl_Buscar.Name = "Lbl_Buscar";
-            this.Lbl_Buscar.Size = new System.Drawing.Size(90, 23);
-            this.Lbl_Buscar.TabIndex = 7;
-            this.Lbl_Buscar.Text = "     Buscar";
-            // 
-            // Dgv_Listado
-            // 
-            this.Dgv_Listado.AllowUserToAddRows = false;
-            this.Dgv_Listado.AllowUserToDeleteRows = false;
-            this.Dgv_Listado.AllowUserToOrderColumns = true;
-            this.Dgv_Listado.BackgroundColor = System.Drawing.Color.Bisque;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Beige;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(69)))), ((int)(((byte)(62)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Dgv_Listado.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.Dgv_Listado.ColumnHeadersHeight = 30;
-            this.Dgv_Listado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.Dgv_Listado.Location = new System.Drawing.Point(36, 321);
-            this.Dgv_Listado.Name = "Dgv_Listado";
-            this.Dgv_Listado.ReadOnly = true;
-            this.Dgv_Listado.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Dgv_Listado.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.Dgv_Listado.Size = new System.Drawing.Size(538, 210);
-            this.Dgv_Listado.TabIndex = 9;
-            // 
-            // Btn_Buscar
-            // 
-            this.Btn_Buscar.BackColor = System.Drawing.Color.ForestGreen;
-            this.Btn_Buscar.FlatAppearance.BorderColor = System.Drawing.Color.MintCream;
-            this.Btn_Buscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_Buscar.Font = new System.Drawing.Font("Constantia", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_Buscar.ForeColor = System.Drawing.Color.White;
-            this.Btn_Buscar.Location = new System.Drawing.Point(410, 277);
-            this.Btn_Buscar.Name = "Btn_Buscar";
-            this.Btn_Buscar.Size = new System.Drawing.Size(89, 31);
-            this.Btn_Buscar.TabIndex = 10;
-            this.Btn_Buscar.Text = "Buscar";
-            this.Btn_Buscar.UseVisualStyleBackColor = false;
-            this.Btn_Buscar.Click += new System.EventHandler(this.Btn_Buscar_Click);
+            this.Lbl_Nombre_Usuario.AutoSize = true;
+            this.Lbl_Nombre_Usuario.Font = new System.Drawing.Font("Constantia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_Nombre_Usuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(44)))), ((int)(((byte)(37)))));
+            this.Lbl_Nombre_Usuario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Lbl_Nombre_Usuario.ImageKey = "pirata (1).png";
+            this.Lbl_Nombre_Usuario.ImageList = this.imageList1;
+            this.Lbl_Nombre_Usuario.Location = new System.Drawing.Point(32, 30);
+            this.Lbl_Nombre_Usuario.Name = "Lbl_Nombre_Usuario";
+            this.Lbl_Nombre_Usuario.Size = new System.Drawing.Size(196, 23);
+            this.Lbl_Nombre_Usuario.TabIndex = 0;
+            this.Lbl_Nombre_Usuario.Text = "     Nombre de Usuario";
             // 
             // Usuarios
             // 
@@ -407,12 +411,12 @@
             this.Load += new System.EventHandler(this.Usuarios_Load);
             this.Panel_Right.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.Img_Logotipo)).EndInit();
             this.Panel_Header.ResumeLayout(false);
             this.Panel_Header.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.Panel_Center.ResumeLayout(false);
             this.Panel_Center.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Img_Logotipo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_Listado)).EndInit();
             this.ResumeLayout(false);
 

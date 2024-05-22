@@ -55,8 +55,16 @@ namespace Tesorero.Frm
 
         private void Btn_Usuarios_Click(object sender, EventArgs e)
         {
-            Usuarios Frm_usuarios = new Usuarios();
-            Frm_usuarios.ShowDialog();
+            if (ID_Rol == 1)
+            {
+                Usuarios Frm_usuarios = new Usuarios();
+                Frm_usuarios.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("No tienes permisos de administrador para acceder", "Aviso del Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            
         }
     }
 }

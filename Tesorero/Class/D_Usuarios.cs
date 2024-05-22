@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using Mysqlx.Prepare;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -96,5 +97,47 @@ namespace Tesorero.Class
             }
         }
 
+        public string Guardar_Usuario(int Opcion,Usuario Pro)
+        {
+            string Respuesta = "";
+            MySqlConnection SqlCon = new MySqlConnection();
+            try
+            {
+                SqlCon = Conexion.getInstancia().CrearConexion();
+                MySqlCommand Comando = new MySqlCommand("usp_Guardar_Usuario",SqlCon);
+                Comando .CommandType = CommandType.StoredProcedure;
+                Comando.Parameters.Add("Opcion",MySqlDbType.Int32).Value=Opcion;
+                Comando.Parameters.Add("cID_Usuario", MySqlDbType.Int32).Value = Pro.ID_Usuario;
+                Comando.Parameters.Add("cNombre_Usuario", MySqlDbType.VarChar).Value = Pro.Nombre_Usuario;
+                Comando.Parameters.Add("cContrasena", MySqlDbType.VarChar).Value = Pro.Contrasena;
+                Comando.Parameters.Add("cID_Rol", MySqlDbType.Int32).Value = Pro.ID_Rol;
+                
+                MySqlParameter p_Codigo = new MySqlParameter();
+                p_Codigo.ParameterName = "Codigo_Salida";
+                p_Codigo.MySqlDbType = MySqlDbType.Int32;
+                p_Codigo.Direction= ParameterDirection.Output;
+                Comando.Parameters.Add(p_Codigo);
+                SqlCon.Open();
+                Comando.ExecuteNonQuery();
+                Respuesta = Convert.ToString(p_Codigo.Value);
+
+
+            }
+            catch (Exception ex)
+            {
+                Respuesta = ex.Message;
+            }
+            finally { 
+                if(SqlCon.State == ConnectionState.Open) SqlCon.Close();
+            }
+            return Respuesta;
+        }
+
+
+
+        public static implicit operator D_Usuarios(Usuario v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
