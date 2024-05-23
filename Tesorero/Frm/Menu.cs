@@ -66,5 +66,11 @@ namespace Tesorero.Frm
             }
             
         }
+
+        private void Btn_Ordenar_Click(object sender, EventArgs e)
+        {
+            Ordenar Frm_Ordenar = new Ordenar();
+            Frm_Ordenar.ShowDialog();
+        }
     }
 }

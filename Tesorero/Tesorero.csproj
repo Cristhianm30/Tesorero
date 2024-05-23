@@ -125,6 +125,12 @@
     <Compile Include="Frm\Menu.Designer.cs">
       <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm\Ordenar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm\Ordenar.Designer.cs">
+      <DependentUpon>Ordenar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm\Usuarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -138,6 +144,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frm\Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm\Ordenar.resx">
+      <DependentUpon>Ordenar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm\Usuarios.resx">
       <DependentUpon>Usuarios.cs</DependentUpon>

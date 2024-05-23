@@ -31,8 +31,17 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu));
             this.Panel_Header = new System.Windows.Forms.Panel();
+            this.Img_Logotipo = new System.Windows.Forms.PictureBox();
             this.Panel_Footer = new System.Windows.Forms.Panel();
+            this.Lbl_Rol = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.Lbl_Nombre_Usuario = new System.Windows.Forms.Label();
             this.Panel_Menu = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.Btn_Salir = new System.Windows.Forms.Button();
+            this.imageList2 = new System.Windows.Forms.ImageList(this.components);
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.Btn_Usuarios = new System.Windows.Forms.Button();
             this.Panel_Contenido = new System.Windows.Forms.Panel();
             this.Btn_Clientes = new System.Windows.Forms.Button();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
@@ -43,22 +52,13 @@
             this.Btn_proveedores = new System.Windows.Forms.Button();
             this.Btn_Informes = new System.Windows.Forms.Button();
             this.Btn_Ordenar = new System.Windows.Forms.Button();
-            this.Img_Logotipo = new System.Windows.Forms.PictureBox();
-            this.Lbl_Nombre_Usuario = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.Lbl_Rol = new System.Windows.Forms.Label();
-            this.Btn_Salir = new System.Windows.Forms.Button();
-            this.imageList2 = new System.Windows.Forms.ImageList(this.components);
-            this.Btn_Usuarios = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.Panel_Header.SuspendLayout();
-            this.Panel_Footer.SuspendLayout();
-            this.Panel_Menu.SuspendLayout();
-            this.Panel_Contenido.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Img_Logotipo)).BeginInit();
+            this.Panel_Footer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.Panel_Menu.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.Panel_Contenido.SuspendLayout();
             this.SuspendLayout();
             // 
             // Panel_Header
@@ -69,6 +69,16 @@
             this.Panel_Header.Name = "Panel_Header";
             this.Panel_Header.Size = new System.Drawing.Size(904, 72);
             this.Panel_Header.TabIndex = 0;
+            // 
+            // Img_Logotipo
+            // 
+            this.Img_Logotipo.Image = ((System.Drawing.Image)(resources.GetObject("Img_Logotipo.Image")));
+            this.Img_Logotipo.Location = new System.Drawing.Point(320, 3);
+            this.Img_Logotipo.Name = "Img_Logotipo";
+            this.Img_Logotipo.Size = new System.Drawing.Size(300, 69);
+            this.Img_Logotipo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.Img_Logotipo.TabIndex = 0;
+            this.Img_Logotipo.TabStop = false;
             // 
             // Panel_Footer
             // 
@@ -81,6 +91,38 @@
             this.Panel_Footer.Size = new System.Drawing.Size(904, 82);
             this.Panel_Footer.TabIndex = 1;
             // 
+            // Lbl_Rol
+            // 
+            this.Lbl_Rol.AutoSize = true;
+            this.Lbl_Rol.Font = new System.Drawing.Font("Constantia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_Rol.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(44)))), ((int)(((byte)(37)))));
+            this.Lbl_Rol.Location = new System.Drawing.Point(111, 49);
+            this.Lbl_Rol.Name = "Lbl_Rol";
+            this.Lbl_Rol.Size = new System.Drawing.Size(37, 23);
+            this.Lbl_Rol.TabIndex = 2;
+            this.Lbl_Rol.Text = "Rol";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(13, 8);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(92, 71);
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
+            // Lbl_Nombre_Usuario
+            // 
+            this.Lbl_Nombre_Usuario.AutoSize = true;
+            this.Lbl_Nombre_Usuario.Font = new System.Drawing.Font("Constantia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_Nombre_Usuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(44)))), ((int)(((byte)(37)))));
+            this.Lbl_Nombre_Usuario.Location = new System.Drawing.Point(111, 19);
+            this.Lbl_Nombre_Usuario.Name = "Lbl_Nombre_Usuario";
+            this.Lbl_Nombre_Usuario.Size = new System.Drawing.Size(74, 23);
+            this.Lbl_Nombre_Usuario.TabIndex = 0;
+            this.Lbl_Nombre_Usuario.Text = "Usuario";
+            this.Lbl_Nombre_Usuario.Click += new System.EventHandler(this.Lbl_Nombre_Usuario_Click);
+            // 
             // Panel_Menu
             // 
             this.Panel_Menu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(104)))), ((int)(((byte)(68)))));
@@ -92,6 +134,65 @@
             this.Panel_Menu.Size = new System.Drawing.Size(184, 612);
             this.Panel_Menu.TabIndex = 2;
             this.Panel_Menu.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel_Menu_Paint);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.panel2.Controls.Add(this.Btn_Salir);
+            this.panel2.Location = new System.Drawing.Point(0, 530);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(184, 82);
+            this.panel2.TabIndex = 3;
+            // 
+            // Btn_Salir
+            // 
+            this.Btn_Salir.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.Btn_Salir.FlatAppearance.BorderColor = System.Drawing.Color.DarkSlateGray;
+            this.Btn_Salir.Font = new System.Drawing.Font("Constantia", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_Salir.ForeColor = System.Drawing.Color.Snow;
+            this.Btn_Salir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Btn_Salir.ImageKey = "Salir02.png";
+            this.Btn_Salir.ImageList = this.imageList2;
+            this.Btn_Salir.Location = new System.Drawing.Point(14, 19);
+            this.Btn_Salir.Name = "Btn_Salir";
+            this.Btn_Salir.Size = new System.Drawing.Size(160, 50);
+            this.Btn_Salir.TabIndex = 0;
+            this.Btn_Salir.Text = "   Salir";
+            this.Btn_Salir.UseVisualStyleBackColor = false;
+            this.Btn_Salir.Click += new System.EventHandler(this.Btn_Salir_Click);
+            // 
+            // imageList2
+            // 
+            this.imageList2.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList2.ImageStream")));
+            this.imageList2.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList2.Images.SetKeyName(0, "Salir.png");
+            this.imageList2.Images.SetKeyName(1, "Salir01.png");
+            this.imageList2.Images.SetKeyName(2, "Salir02.png");
+            this.imageList2.Images.SetKeyName(3, "guacamayo.png");
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.YellowGreen;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(183, 72);
+            this.panel1.TabIndex = 2;
+            // 
+            // Btn_Usuarios
+            // 
+            this.Btn_Usuarios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(104)))), ((int)(((byte)(68)))));
+            this.Btn_Usuarios.Font = new System.Drawing.Font("Constantia", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_Usuarios.ForeColor = System.Drawing.Color.Snow;
+            this.Btn_Usuarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Btn_Usuarios.ImageKey = "guacamayo.png";
+            this.Btn_Usuarios.ImageList = this.imageList2;
+            this.Btn_Usuarios.Location = new System.Drawing.Point(14, 97);
+            this.Btn_Usuarios.Name = "Btn_Usuarios";
+            this.Btn_Usuarios.Size = new System.Drawing.Size(160, 55);
+            this.Btn_Usuarios.TabIndex = 1;
+            this.Btn_Usuarios.Text = "    Usuarios";
+            this.Btn_Usuarios.UseVisualStyleBackColor = false;
+            this.Btn_Usuarios.Click += new System.EventHandler(this.Btn_Usuarios_Click);
             // 
             // Panel_Contenido
             // 
@@ -227,107 +328,7 @@
             this.Btn_Ordenar.Text = "Ordenar";
             this.Btn_Ordenar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.Btn_Ordenar.UseVisualStyleBackColor = true;
-            // 
-            // Img_Logotipo
-            // 
-            this.Img_Logotipo.Image = ((System.Drawing.Image)(resources.GetObject("Img_Logotipo.Image")));
-            this.Img_Logotipo.Location = new System.Drawing.Point(320, 3);
-            this.Img_Logotipo.Name = "Img_Logotipo";
-            this.Img_Logotipo.Size = new System.Drawing.Size(300, 69);
-            this.Img_Logotipo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.Img_Logotipo.TabIndex = 0;
-            this.Img_Logotipo.TabStop = false;
-            // 
-            // Lbl_Nombre_Usuario
-            // 
-            this.Lbl_Nombre_Usuario.AutoSize = true;
-            this.Lbl_Nombre_Usuario.Font = new System.Drawing.Font("Constantia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_Nombre_Usuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(44)))), ((int)(((byte)(37)))));
-            this.Lbl_Nombre_Usuario.Location = new System.Drawing.Point(111, 19);
-            this.Lbl_Nombre_Usuario.Name = "Lbl_Nombre_Usuario";
-            this.Lbl_Nombre_Usuario.Size = new System.Drawing.Size(74, 23);
-            this.Lbl_Nombre_Usuario.TabIndex = 0;
-            this.Lbl_Nombre_Usuario.Text = "Usuario";
-            this.Lbl_Nombre_Usuario.Click += new System.EventHandler(this.Lbl_Nombre_Usuario_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(13, 8);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(92, 71);
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            // 
-            // Lbl_Rol
-            // 
-            this.Lbl_Rol.AutoSize = true;
-            this.Lbl_Rol.Font = new System.Drawing.Font("Constantia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_Rol.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(44)))), ((int)(((byte)(37)))));
-            this.Lbl_Rol.Location = new System.Drawing.Point(111, 49);
-            this.Lbl_Rol.Name = "Lbl_Rol";
-            this.Lbl_Rol.Size = new System.Drawing.Size(37, 23);
-            this.Lbl_Rol.TabIndex = 2;
-            this.Lbl_Rol.Text = "Rol";
-            // 
-            // Btn_Salir
-            // 
-            this.Btn_Salir.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.Btn_Salir.FlatAppearance.BorderColor = System.Drawing.Color.DarkSlateGray;
-            this.Btn_Salir.Font = new System.Drawing.Font("Constantia", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_Salir.ForeColor = System.Drawing.Color.Snow;
-            this.Btn_Salir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Btn_Salir.ImageKey = "Salir02.png";
-            this.Btn_Salir.ImageList = this.imageList2;
-            this.Btn_Salir.Location = new System.Drawing.Point(14, 19);
-            this.Btn_Salir.Name = "Btn_Salir";
-            this.Btn_Salir.Size = new System.Drawing.Size(160, 50);
-            this.Btn_Salir.TabIndex = 0;
-            this.Btn_Salir.Text = "   Salir";
-            this.Btn_Salir.UseVisualStyleBackColor = false;
-            this.Btn_Salir.Click += new System.EventHandler(this.Btn_Salir_Click);
-            // 
-            // imageList2
-            // 
-            this.imageList2.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList2.ImageStream")));
-            this.imageList2.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList2.Images.SetKeyName(0, "Salir.png");
-            this.imageList2.Images.SetKeyName(1, "Salir01.png");
-            this.imageList2.Images.SetKeyName(2, "Salir02.png");
-            this.imageList2.Images.SetKeyName(3, "guacamayo.png");
-            // 
-            // Btn_Usuarios
-            // 
-            this.Btn_Usuarios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(104)))), ((int)(((byte)(68)))));
-            this.Btn_Usuarios.Font = new System.Drawing.Font("Constantia", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_Usuarios.ForeColor = System.Drawing.Color.Snow;
-            this.Btn_Usuarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Btn_Usuarios.ImageKey = "guacamayo.png";
-            this.Btn_Usuarios.ImageList = this.imageList2;
-            this.Btn_Usuarios.Location = new System.Drawing.Point(14, 97);
-            this.Btn_Usuarios.Name = "Btn_Usuarios";
-            this.Btn_Usuarios.Size = new System.Drawing.Size(160, 55);
-            this.Btn_Usuarios.TabIndex = 1;
-            this.Btn_Usuarios.Text = "    Usuarios";
-            this.Btn_Usuarios.UseVisualStyleBackColor = false;
-            this.Btn_Usuarios.Click += new System.EventHandler(this.Btn_Usuarios_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.YellowGreen;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(183, 72);
-            this.panel1.TabIndex = 2;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.panel2.Controls.Add(this.Btn_Salir);
-            this.panel2.Location = new System.Drawing.Point(0, 530);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(184, 82);
-            this.panel2.TabIndex = 3;
+            this.Btn_Ordenar.Click += new System.EventHandler(this.Btn_Ordenar_Click);
             // 
             // Menu
             // 
@@ -350,13 +351,13 @@
             this.Text = "Tesorero";
             this.Load += new System.EventHandler(this.Menu_Load);
             this.Panel_Header.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.Img_Logotipo)).EndInit();
             this.Panel_Footer.ResumeLayout(false);
             this.Panel_Footer.PerformLayout();
-            this.Panel_Menu.ResumeLayout(false);
-            this.Panel_Contenido.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.Img_Logotipo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.Panel_Menu.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            this.Panel_Contenido.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
