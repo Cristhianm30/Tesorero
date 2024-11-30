@@ -1,3 +1,4 @@
+# ABANDONADO
 # Tesorero
 Es un proyecto estudiantil donde se desarolla una aplicación de gestión integral diseñada para optimizar las operaciones administrativas de restaurantes.
 ## Objetivo
